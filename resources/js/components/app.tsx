@@ -1,16 +1,10 @@
 import React from "react";
+import ListGroup from "./ListGroup";
 
-interface Props {
-    items: {
-        id: [];
-        label: string[];
-    }
-}
-
-function App({ items }) {
+function App() {
     return (
         <>
-            <h1>{ items.status }</h1>
+           <h1>Welcome po <ListGroup/></h1>
         </>
     );
 }
