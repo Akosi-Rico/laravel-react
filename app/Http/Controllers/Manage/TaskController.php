@@ -3,29 +3,33 @@
 namespace App\Http\Controllers\Manage;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Requests\Manage\TaskRequest;
+use App\Models\Management\Task;
 
 class TaskController extends Controller
 {
     public function index()
     {
         $data = [
-            "status" => [
-                [
-                    "id" => 1,
-                    "label" => "Ongoing",
-                ],
-                [
-                 "id" => 2,
-                 "label" => "Done",
-                ],
-                [
-                    "id" => 3,
-                    "label" => "Hold",
-                ]
-            ],
+            'statusOption' => config("taskOption.status"),
+            'taskUrl' => route("process.task")
         ];
-        
+
         return view("modules.index", compact('data'));
+    }
+
+    public function loadTable()
+    {
+        return [
+            "draw" => request()->draw,
+            "recordsTotal" => 0,
+            "recordsFiltered" => 0,
+            "data" => []
+        ];
+    }
+
+    public function createOrUpdateTask(TaskRequest $request)
+    {
+        return Task::createOrUpdateTask(request()->payload);
     }
 }
