@@ -4,6 +4,8 @@ import CreationForm from "./form";
 import Header from "./header";
 import Student from "./study-props";
 import List from "./list";
+import Counter from "./counter";
+import Element from "./element";
 //  <ListGroup data={data} />
 function App({ data }) {
 
@@ -46,9 +48,11 @@ function App({ data }) {
     return (
         <>
            <Header/>
+           <Element/>
+           {/* <Counter/> */}
            {/* <List items={fruits} category="Fruits"/>
            <List items={language} category="Programming"/> */}
-            <CreationForm id={1} label="rico" age={29} data={appData}/>
+            {/* <CreationForm id={1} label="rico" age={29} data={appData}/> */}
             {/* <Student name="Rico" age={29} isStudent={true}/>
             <Student name="Danna" age={29} isStudent={false}/>
             <Student /> */}
