@@ -28,7 +28,6 @@ function Element() {
         setPayment(event.target.value);
     }
 
-
     return (<>
         <section className="mx-2 p-2">
             <div className="flex w-full pt-28">

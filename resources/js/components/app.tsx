@@ -6,6 +6,9 @@ import Student from "./study-props";
 import List from "./list";
 import Counter from "./counter";
 import Element from "./element";
+import ColorPicker from "./ColorPicker";
+import CounterUpdate from './counter-update';
+import DreamCar from "./Updater";
 //  <ListGroup data={data} />
 function App({ data }) {
 
@@ -48,7 +51,10 @@ function App({ data }) {
     return (
         <>
            <Header/>
-           <Element/>
+           {/* <ColorPicker/> */}
+           {/* <CounterUpdate/> */}
+           <DreamCar/>
+           {/* <Element/> */}
            {/* <Counter/> */}
            {/* <List items={fruits} category="Fruits"/>
            <List items={language} category="Programming"/> */}
