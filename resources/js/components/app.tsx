@@ -9,6 +9,8 @@ import Element from "./element";
 import ColorPicker from "./ColorPicker";
 import CounterUpdate from './counter-update';
 import DreamCar from "./Updater";
+import UpdateArrayList from "./UpdateArray";
+import DreamCarArrayInObject from "./UpdateArrayInObject";
 //  <ListGroup data={data} />
 function App({ data }) {
 
@@ -51,9 +53,11 @@ function App({ data }) {
     return (
         <>
            <Header/>
+           <DreamCarArrayInObject/>
            {/* <ColorPicker/> */}
            {/* <CounterUpdate/> */}
-           <DreamCar/>
+           {/* <DreamCar/> */}
+           {/* <UpdateArrayList/> */}
            {/* <Element/> */}
            {/* <Counter/> */}
            {/* <List items={fruits} category="Fruits"/>
