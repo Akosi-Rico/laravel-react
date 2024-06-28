@@ -12,6 +12,7 @@ import DreamCar from "./Updater";
 import UpdateArrayList from "./UpdateArray";
 import DreamCarArrayInObject from "./UpdateArrayInObject";
 import TodoList from "./todoList";
+import UseEffectComponent from "./useEffectComponent";
 //  <ListGroup data={data} />
 function App({ data }) {
 
@@ -54,7 +55,8 @@ function App({ data }) {
     return (
         <>
            <Header/>
-           <TodoList/>
+           {/* <TodoList/> */}
+           <UseEffectComponent/>
            {/* <DreamCarArrayInObject/> */}
            {/* <ColorPicker/> */}
            {/* <CounterUpdate/> */}

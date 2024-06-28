@@ -40,12 +40,12 @@ function DreamCarArrayInObject() {
                     </div>
                     <div className="flex m-2">
                        <ul>
-                         {
+                        {
                             cars.map((element, index) => 
                                 <li key={index} onClick={() => handleRemovingCar(index)}>
                                     {element.year} {element.make} {element.model}
                                 </li>)
-                         }
+                        }
                        </ul>
                     </div>
                    <div className="flex m-2 ">
