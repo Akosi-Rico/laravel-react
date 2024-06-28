@@ -28,7 +28,7 @@ class TaskController extends Controller
         ];
     }
 
-    public function createOrUpdateTask(TaskRequest $request)
+    public function createOrUpdateTask()
     {
         return Task::createOrUpdateTask(request()->payload);
     }

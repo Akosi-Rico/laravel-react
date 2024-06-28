@@ -33,7 +33,7 @@ function DreamCar() {
                         <input type="text" onChange={() => handleCarModel(event)} value={car.model}/>
                    </div>
                 </div>
-           </section>
+           </section> 
     </>);
 }
 
