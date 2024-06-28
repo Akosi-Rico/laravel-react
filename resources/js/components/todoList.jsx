@@ -7,6 +7,7 @@ function TodoList() {
     const handleAddTask = () => {
         if (newTask.trim() !=="") {
             setTask(t => ([...t, newTask]));
+            setNewTask("");
         }
     }
 
@@ -54,6 +55,7 @@ function TodoList() {
                         focus:ring-2
                         focus:ring-blue-500
                         focus:border-blue-500" 
+                        value={newTask}
                         placeholder="Enter task..."
                         onChange={() => handleInputChange(event)}/>
                         <button
