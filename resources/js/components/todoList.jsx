@@ -79,22 +79,22 @@ function TodoList() {
                             tasks.map((task, index) => (
                                 <li key={index} className="border border-gray-400 bg-slate-200 w-1/5 flex justify-center items-center">
                                     <span className="text-xs font-medium text-gray-700 p-2 mx-5 w-28"  onClick={() => handleRemoveTask(index)}>{task}</span>
-                                        <button
-                                            className="bg-green-500 
-                                            py-1
-                                            px-4
-                                            rounded 
-                                            focus:outline-none 
-                                            focus:ring-2  
-                                            focus:ring-green-500 
-                                            focus:ring-opacity-50
-                                            m-1
-                                            text-white
-                                            w-1/5
-                                            text-sm
-                                            h-9" onClick={() => handleTaskUp(index)}>
+                                    <button
+                                        className="bg-green-500 
+                                        py-1
+                                        px-4
+                                        rounded 
+                                        focus:outline-none 
+                                        focus:ring-2  
+                                        focus:ring-green-500 
+                                        focus:ring-opacity-50
+                                        m-1
+                                        text-white
+                                        w-1/5
+                                        text-sm
+                                        h-9" onClick={() => handleTaskUp(index)}>
                                         Up
-                                        </button>
+                                    </button>
                                     <button
                                         className="bg-green-500 
                                         py-1
