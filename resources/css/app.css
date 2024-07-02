@@ -74,3 +74,15 @@ table.dataTable thead th {
         @apply bg-red-500 text-white px-4 py-2 rounded-lg cursor-pointer;
     }
 }
+
+.digital-clock-container {
+   @apply backdrop-sepia-0 bg-white/30 w-svw flex justify-center items-center;
+}
+
+.clock {
+    @apply text-[6em] text-white font-mono text-center shadow-md font-extrabold
+}
+
+body {
+    @apply bg-[url("http://akosirico.local/image/nature.jpg")] bg-center bg-no-repeat bg-cover bg-fixed m-0;
+}

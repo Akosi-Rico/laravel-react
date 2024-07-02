@@ -13,6 +13,7 @@ import UpdateArrayList from "./UpdateArray";
 import DreamCarArrayInObject from "./UpdateArrayInObject";
 import TodoList from "./todoList";
 import UseEffectComponent from "./useEffectComponent";
+import DigitalClock from "./digitalClock";
 //  <ListGroup data={data} />
 function App({ data }) {
 
@@ -56,7 +57,8 @@ function App({ data }) {
         <>
            <Header/>
            {/* <TodoList/> */}
-           <UseEffectComponent/>
+           <DigitalClock/>
+           {/* <UseEffectComponent/> */}
            {/* <DreamCarArrayInObject/> */}
            {/* <ColorPicker/> */}
            {/* <CounterUpdate/> */}

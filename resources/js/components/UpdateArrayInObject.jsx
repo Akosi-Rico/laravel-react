@@ -3,7 +3,6 @@ import React, {useState} from "react";
 function DreamCarArrayInObject() {
 
     // using useState and updater function with spread operator
-
     const [cars, setCar] = useState([]);
     const [year, setYear] = useState(new  Date().getFullYear())
     const [make, setMake] = useState("");
@@ -40,12 +39,12 @@ function DreamCarArrayInObject() {
                     </div>
                     <div className="flex m-2">
                        <ul>
-                        {
+                         {
                             cars.map((element, index) => 
                                 <li key={index} onClick={() => handleRemovingCar(index)}>
                                     {element.year} {element.make} {element.model}
                                 </li>)
-                        }
+                         }
                        </ul>
                     </div>
                    <div className="flex m-2 ">
