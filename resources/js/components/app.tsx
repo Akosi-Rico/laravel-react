@@ -14,6 +14,8 @@ import DreamCarArrayInObject from "./UpdateArrayInObject";
 import TodoList from "./todoList";
 import UseEffectComponent from "./useEffectComponent";
 import DigitalClock from "./digitalClock";
+import ComponentA from "./componentA";
+import UseRef from "./useRef";
 //  <ListGroup data={data} />
 function App({ data }) {
 
@@ -56,8 +58,10 @@ function App({ data }) {
     return (
         <>
            <Header/>
+           <UseRef/>
+           {/* <ComponentA/> */}
            {/* <TodoList/> */}
-           <DigitalClock/>
+           {/* <DigitalClock/> */}
            {/* <UseEffectComponent/> */}
            {/* <DreamCarArrayInObject/> */}
            {/* <ColorPicker/> */}

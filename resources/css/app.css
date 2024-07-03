@@ -83,6 +83,6 @@ table.dataTable thead th {
     @apply text-[6em] text-white font-mono text-center shadow-md font-extrabold
 }
 
-body {
-    @apply bg-[url("http://akosirico.local/image/nature.jpg")] bg-center bg-no-repeat bg-cover bg-fixed m-0;
-}
+/* body {
+    @apply bg-[url("http://laravel-react.test/image/nature.jpg")] bg-center bg-no-repeat bg-cover bg-fixed m-0;
+} */
