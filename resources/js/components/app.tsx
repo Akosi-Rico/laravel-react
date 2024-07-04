@@ -16,6 +16,8 @@ import UseEffectComponent from "./useEffectComponent";
 import DigitalClock from "./digitalClock";
 import ComponentA from "./componentA";
 import UseRef from "./useRef";
+import StopWatch from "./stopwatch";
+import PageSection from "./panel";
 //  <ListGroup data={data} />
 function App({ data }) {
 
@@ -57,8 +59,10 @@ function App({ data }) {
 
     return (
         <>
-           <Header/>
-           <UseRef/>
+           <Header data={appData}/>
+           <PageSection/>
+           {/* <StopWatch/> */}
+           {/* <UseRef/> */}
            {/* <ComponentA/> */}
            {/* <TodoList/> */}
            {/* <DigitalClock/> */}

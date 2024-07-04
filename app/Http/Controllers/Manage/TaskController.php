@@ -12,7 +12,8 @@ class TaskController extends Controller
     {
         $data = [
             'statusOption' => config("taskOption.status"),
-            'taskUrl' => route("process.task")
+            'taskUrl' => route("process.task"),
+            'logo' => asset("image/logo.png"),
         ];
 
         return view("modules.index", compact('data'));

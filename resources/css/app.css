@@ -86,3 +86,13 @@ table.dataTable thead th {
 /* body {
     @apply bg-[url("http://laravel-react.test/image/nature.jpg")] bg-center bg-no-repeat bg-cover bg-fixed m-0;
 } */
+
+.collapse-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color:red;
+  }
+  .collapse-content.expanded {
+    max-height: 500px; /* adjust based on content height */
+  }
