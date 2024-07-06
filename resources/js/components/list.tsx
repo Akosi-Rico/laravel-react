@@ -5,6 +5,19 @@ function List(props) {
     const category = props.category;
     const itemList = props.items;
 
+
+    const project = {
+         name: "rico",
+         age: 1,
+         specs: {
+            ram: 12,
+            size: "1234",
+            os: "linux",
+         }
+    }
+
+    type spec = typeof project["specs"];
+
     const ListItem = itemList.map((item) => (
         <li
             key={item.id}

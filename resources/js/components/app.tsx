@@ -18,6 +18,7 @@ import ComponentA from "./componentA";
 import UseRef from "./useRef";
 import StopWatch from "./stopwatch";
 import PageSection from "./panel";
+import ComponentApp from "./component";
 //  <ListGroup data={data} />
 function App({ data }) {
 
@@ -59,8 +60,9 @@ function App({ data }) {
 
     return (
         <>
-           <Header data={appData}/>
-           <PageSection/>
+           {/* <Header data={appData}/> */}
+           <ComponentApp/>
+           {/* <PageSection/> */}
            {/* <StopWatch/> */}
            {/* <UseRef/> */}
            {/* <ComponentA/> */}
