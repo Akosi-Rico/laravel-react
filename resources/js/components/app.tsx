@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ListGroup from "./ListGroup";
 import CreationForm from "./form";
 import Header from "./header";
@@ -59,10 +59,15 @@ function App({ data }) {
         }
     ];
 
-    
+    const [isAllowed, setIsAllowed] = useState(false);
+
+
     const testing = () => {
-        console.log("clicked!");
+        setIsAllowed(true);
+        console.log("clicked!" + (isAllowed ? "Allowed" : "Not Allowed!"));
     }
+
+
 
     return (
         <>
