@@ -19,6 +19,7 @@ import UseRef from "./useRef";
 import StopWatch from "./stopwatch";
 import PageSection from "./panel";
 import ComponentApp from "./component";
+import Button from "./button";
 //  <ListGroup data={data} />
 function App({ data }) {
 
@@ -58,10 +59,16 @@ function App({ data }) {
         }
     ];
 
+    
+    const testing = () => {
+        console.log("clicked!");
+    }
+
     return (
         <>
            {/* <Header data={appData}/> */}
-           <ComponentApp/>
+           <Button color="button-primary" text="My Button" onClick={testing}/>
+           {/* <ComponentApp/> */}
            {/* <PageSection/> */}
            {/* <StopWatch/> */}
            {/* <UseRef/> */}
