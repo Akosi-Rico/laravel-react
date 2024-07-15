@@ -16,6 +16,7 @@ class TaskController extends Controller
             'logo' => asset("image/logo.png"),
         ];
 
+       // return $data;
         return view("modules.index", compact('data'));
     }
 

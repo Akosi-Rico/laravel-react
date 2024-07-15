@@ -20,6 +20,7 @@ import StopWatch from "./stopwatch";
 import PageSection from "./panel";
 import ComponentApp from "./component";
 import Button from "./button";
+import Index from "./index";
 //  <ListGroup data={data} />
 function App({ data }) {
 
@@ -62,17 +63,17 @@ function App({ data }) {
     const [isAllowed, setIsAllowed] = useState(false);
 
 
-    const testing = () => {
-        setIsAllowed(true);
-        console.log("clicked!" + (isAllowed ? "Allowed" : "Not Allowed!"));
-    }
-
+    // const testing = (event) => {
+    //     setIsAllowed(true);
+    //     console.log("clicked!" + (isAllowed ? "Allowed" : "Not Allowed!")+ event.target.value);
+    // }
 
 
     return (
         <>
-           {/* <Header data={appData}/> */}
-           <Button color="button-primary" text="My Button" onClick={testing}/>
+           <Header data={appData}/>
+           <Index/>
+           {/* <Button color="button-primary" text="My Button" onClick={() => testing(event)}/> */}
            {/* <ComponentApp/> */}
            {/* <PageSection/> */}
            {/* <StopWatch/> */}
