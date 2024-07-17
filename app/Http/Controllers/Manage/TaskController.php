@@ -30,8 +30,9 @@ class TaskController extends Controller
         ];
     }
 
-    public function createOrUpdateTask()
+    public function createOrUpdateTask(TaskRequest $request)
     {
+        //info(request()->all());
         return Task::createOrUpdateTask(request()->payload);
     }
 }

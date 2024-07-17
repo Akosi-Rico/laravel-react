@@ -15,23 +15,23 @@ class Task extends Model
 
     public static function createOrUpdateTask($request)
     {
-        // if (empty($request)) {
-        //     return false;
-        // }
-
-        // $task = self::where("id", $request['id'])->first();
-        // if (empty($task)) {
-        //     $task = new self();
-        // }
-
-        // $task->title = $request['title'];
-        // $task->content = $request['task'];
-        // $task->save();
-
+       
 
         try {
             DB::beginTransaction();
-            throw new \Exception("Testing Error");
+                if (empty($request)) {
+                    return false;
+                }
+
+                $task = self::where("id", $request['id'])->first();
+                if (empty($task)) {
+                    $task = new self();
+                }
+
+                $task->title = $request['title'];
+                $task->content = $request['task'];
+                $task->save();
+
             DB::commit();
         } catch (\Throwable $th) {
             return self::loadResponse($th->getMessage(), Response::HTTP_BAD_REQUEST, new JsonOutput);
