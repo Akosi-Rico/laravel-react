@@ -30,6 +30,7 @@ class Task extends Model
 
                 $task->title = $request['title'];
                 $task->content = $request['task'];
+                $task->status_id = $request['status'];
                 $task->save();
 
             DB::commit();
