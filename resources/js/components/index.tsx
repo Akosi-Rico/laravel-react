@@ -17,6 +17,7 @@ export default function MainPage() {
     const [pending, setPending] = useState(true);
     const [rows, setRows] = useState([]);
     const [hachero, setRico] = useState(0);
+    const [id, setId] = useState("");
 
     const SetTitleValue  = (event) => {
         setTitle(event.target.value);
@@ -33,7 +34,7 @@ export default function MainPage() {
     const CreateNewRecord = () => {
         Axios.post('/process/task', {
             payload: {
-                id: '',
+                id: id,
                 title: title,
                 task: task,
                 status:status
@@ -69,12 +70,16 @@ export default function MainPage() {
         },
         {
             name: 'Actions',
-            cell: (row) => <button className="button-danger" onClick={() => ShowValue(row.title)}>Action</button>,
+          //  cell: (row) => [<button key={row.id} className="button-danger" onClick={() => ShowValue(row)}>Edit</button>, <button className="button-danger" onClick={() => ShowValue(row.title)}>Action</button>],
+            cell: (row) => [<button key={row.id} className="button-danger" onClick={() => ShowValue(row)}>Edit</button>],
           }
     ];
 
     const ShowValue = (data) => {
-        alert(data);
+        setTask(data.content);
+        setTitle(data.title);
+        setStatus(data.status_id);
+        setId(data.id);
     }
 
     useEffect(() => {
