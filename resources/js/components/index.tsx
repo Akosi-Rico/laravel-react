@@ -69,12 +69,13 @@ export default function MainPage() {
         },
         {
             name: 'Actions',
-            cell: (row) => <button className="button-danger">Action</button>,
-            ignoreRowClick: true,
-            allowOverflow: true,
-            button: true,
+            cell: (row) => <button className="button-danger" onClick={() => ShowValue(row.title)}>Action</button>,
           }
     ];
+
+    const ShowValue = (data) => {
+        alert(data);
+    }
 
     useEffect(() => {
         const timeout = setTimeout(() => {
