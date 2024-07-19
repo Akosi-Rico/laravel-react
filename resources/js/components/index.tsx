@@ -46,6 +46,7 @@ export default function MainPage() {
                 setTask("");
                 setStatus("");
                 setRico(h => h+1);
+                setId("");
                 console.log(hachero);
             }
         })
