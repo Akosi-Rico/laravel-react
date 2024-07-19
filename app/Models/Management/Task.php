@@ -15,8 +15,6 @@ class Task extends Model
 
     public static function createOrUpdateTask($request)
     {
-       
-
         try {
             DB::beginTransaction();
                 if (empty($request)) {
@@ -36,6 +34,15 @@ class Task extends Model
             DB::commit();
         } catch (\Throwable $th) {
             return self::loadResponse($th->getMessage(), Response::HTTP_BAD_REQUEST, new JsonOutput);
+        }
+    }
+
+    public static function loadData()
+    {
+        try {
+            return self::select("id", "title", "content", "status_id")->get();
+        } catch(\Throwable $th) {
+            return self::loadResponse($th->getMessage(), Response::HTTP_BAD_REQUEST, new JsonOutput); 
         }
     }
 }

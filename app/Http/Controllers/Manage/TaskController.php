@@ -22,12 +22,7 @@ class TaskController extends Controller
 
     public function loadTable()
     {
-        return [
-            "draw" => request()->draw,
-            "recordsTotal" => 0,
-            "recordsFiltered" => 0,
-            "data" => []
-        ];
+       return Task::loadData();
     }
 
     public function createOrUpdateTask(TaskRequest $request)

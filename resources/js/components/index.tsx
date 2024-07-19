@@ -14,7 +14,10 @@ export default function MainPage() {
     const [title, setTitle] = useState("");
     const [task, setTask] = useState("");
     const [status, setStatus] = useState("");
-  
+    const [pending, setPending] = useState(true);
+    const [rows, setRows] = useState([]);
+    const [hachero, setRico] = useState(0);
+
     const SetTitleValue  = (event) => {
         setTitle(event.target.value);
     }
@@ -41,6 +44,8 @@ export default function MainPage() {
                 setTitle("");
                 setTask("");
                 setStatus("");
+                setRico(h => h+1);
+                console.log(hachero);
             }
         })
         .catch(function (error) {
@@ -50,58 +55,42 @@ export default function MainPage() {
 
     const columns = [
         {
-            name: "Name",
-            selector: row => row.name,
+            name: "Title",
+            selector: row => row.title,
             sortable:true,
         },
         {
-            name: "Email",
-            selector: row => row.email,
+            name: "Content",
+            selector: row => row.content,
         },
         {
-            name: "Age",
-            selector: row => row.age,
-        }
+            name: "Status",
+            selector: row => row.status_id,
+        },
+        {
+            name: 'Actions',
+            cell: (row) => <button className="button-danger">Action</button>,
+            ignoreRowClick: true,
+            allowOverflow: true,
+            button: true,
+          }
     ];
-
-    const Data = [
-        {
-            id: 1,
-            name: "A",
-            email: "a@gmail.com",
-            age: 1
-        },
-        {
-            id: 2,
-            name: "B",
-            email: "a@gmail.com",
-            age: 2
-        },
-        {
-            id: 3,
-            name: "C",
-            email: "a@gmail.com",
-            age: 3
-        },
-    ];
-    // const paginationComponentOptions = {
-    //     rowsPerPageText: 'Show Per Page',
-    //     rangeSeparatorText: '>',
-    //     selectAllRowsItem: true,
-    //     selectAllRowsItemText: 'Todos',
-    // };
-    
-    const [pending, setPending] = useState(true);
-    const [rows, setRows] = useState([]);
-
 
     useEffect(() => {
         const timeout = setTimeout(() => {
-          setRows(Data);
-          setPending(false);
+            Axios.get('/table')
+            .then(function (response) {
+                if (response) {
+                    setRows(response.data);
+                    setPending(false);
+                }
+            })
+            .catch(function (error) {
+               // setErrors(error.response.data.errors);
+            });
         }, 2000);
         return () => clearTimeout(timeout);
-      }, []);
+      }, [hachero]);
 
     return(<>
         <section className="mx-2 py-2">
@@ -198,10 +187,10 @@ export default function MainPage() {
                 <div className="flex flex-col pt-3 border border-solid my-2">
                     <DataTable
                         columns={columns}
-                        data={Data}
+                        data={rows}
                         progressPending={pending}
-                        // selectableRows
-                        // fixedHeader
+                        selectableRows
+                        fixedHeader
                         pagination>
                     </DataTable>
                 </div>
